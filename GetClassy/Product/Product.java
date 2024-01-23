@@ -5,7 +5,8 @@ public class Product
     private String description;
     private double cost;
 
-    public Product(String ID, String name, String description, double cost) {
+    public Product(String ID, String name, String description, double cost)
+    {
         this.ID = ID;
         this.name = name;
         this.description = description;
@@ -13,35 +14,43 @@ public class Product
     }
 
     //Getters and Setters and ToString Methods
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public String getDescription() {
+    public String getDescription()
+    {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description)
+    {
         this.description = description;
     }
 
-    public String getID() {
+    public String getID()
+    {
         return ID;
     }
 
-    public double getCost() {
+    public double getCost()
+    {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(double cost)
+    {
         this.cost = cost;
     }
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Product{" +
                 "ID='" + ID + '\'' +
                 ", Name='" + name + '\'' +
@@ -52,7 +61,8 @@ public class Product
 
     //Unique Methods
 
-    public String toCSVRecordMethod(){
+    public String toCSVRecordMethod()
+    {
         return this.ID + ", " + this.name + ", " + this.description + ", " + cost;
     }
 }
