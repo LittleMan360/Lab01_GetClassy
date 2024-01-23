@@ -11,7 +11,7 @@ public class PersonGenerator
 {
     public static void main(String[] args)
     {
-        ArrayList<String> people = new ArrayList<>();
+        ArrayList<Person> personList = new ArrayList<>();
         Scanner in =new Scanner(System.in);
 
         File workingDirectory = new File(System.getProperty("user.dir"));
@@ -26,14 +26,15 @@ public class PersonGenerator
         e. YearOfBirth (an int)
          */
 
-        String personRec;
+
         String ID;
         String firstName;
         String lastName;
         String title;
         int YOB;
 
-        do {
+        do
+        {
 
             ID = SafeInput.getNonZeroLenString(in,"Enter the ID [6 digits]");
             firstName = SafeInput.getNonZeroLenString(in,"Enter the first name");
@@ -41,15 +42,13 @@ public class PersonGenerator
             title = SafeInput.getNonZeroLenString(in,"Enter the title");
             YOB = SafeInput.getRangedInt(in,"Enter the YOB: ", 1000, 9999);
 
-            personRec = ID + ", " + firstName + ", " + lastName + ", " + title + ", " + YOB;
-
-            people.add(personRec);
+            Person personInput = new Person(firstName,lastName,ID,title,YOB);
+            personList.add(personInput);
 
             done = SafeInput.getYNConfirm(in, "Are you done?" );
         }while(!done);
 
-        for( String p: people)
-            System.out.println(p);
+
 
         try
         {
@@ -62,9 +61,9 @@ public class PersonGenerator
 
             // Finally can write the file LOL!
 
-            for(String rec : people)
+            for(Person rec : personList)
             {
-                writer.write(rec, 0, rec.length());  // stupid syntax for write rec
+                writer.write(rec.toCSVRecordMethod(), 0, rec.toCSVRecordMethod().length());  // stupid syntax for write rec
                 // 0 is where to start (1st char) to write
                 // rec. length() is how many chars to write (all)
                 writer.newLine();  // adds the new line
@@ -76,5 +75,9 @@ public class PersonGenerator
         catch (IOException e) {
             e.printStackTrace();
         }
+
+        System.out.println("\nFile Storage formats:");
+
+
     }
 }

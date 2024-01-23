@@ -14,7 +14,8 @@ public class PersonReader
         File selectedFile;
         String rec;
 
-        try {
+        try
+        {
             // uses a fixed known path:
             //  Path file = Paths.get("c:\\My Documents\\data.txt");
 
@@ -30,7 +31,8 @@ public class PersonReader
             // we have to code the complete program within the conditional return of
             // the filechooser because the user can close it without picking a file
 
-            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+            {
                 selectedFile = chooser.getSelectedFile();
                 Path file = selectedFile.toPath();
                 // Typical java pattern of inherited classes
@@ -54,7 +56,8 @@ public class PersonReader
                 System.out.println("\n\nData file read!");
 
 
-            } else  // User closed the chooser without selecting a file
+            }
+            else  // User closed the chooser without selecting a file
             {
                 System.out.println("No file selected!!! ... exiting.\nRun the program again and select a file.");
             }

@@ -21,7 +21,7 @@ public class SafeInput
     */ 
    public static String getNonZeroLenString(Scanner pipe, String prompt)
    {
-       String retString = "";
+       String retString;
        do
        {
            System.out.print("\n" + prompt + ": ");
@@ -42,7 +42,7 @@ public class SafeInput
     public static int getRangedInt(Scanner pipe, String prompt, int low, int high)
     {
        int retVal = 0;
-       String trash = "";
+       String trash;
        boolean done = false;
        
        do
