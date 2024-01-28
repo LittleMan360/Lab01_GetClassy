@@ -29,11 +29,13 @@ public class ProductWriter
          */
 
 
+        //creates the variables
         String productID;
         String productName;
         String description;
         double cost;
 
+        //creates the product
         do {
 
             productID = SafeInput.getNonZeroLenString(in,"Enter the product ID [6 digits]");
@@ -47,6 +49,7 @@ public class ProductWriter
             done = SafeInput.getYNConfirm(in, "Are you done?" );
         }while(!done);
 
+        //writes the file
         try
         {
             // Typical java pattern of inherited classes

@@ -27,15 +27,16 @@ public class PersonGenerator
          */
 
 
+        //creates the variables
         String ID;
         String firstName;
         String lastName;
         String title;
         int YOB;
-
+        //creates the person
         do
         {
-
+            //lets user enter id
             ID = SafeInput.getNonZeroLenString(in,"Enter the ID [6 digits]");
             firstName = SafeInput.getNonZeroLenString(in,"Enter the first name");
             lastName = SafeInput.getNonZeroLenString(in,"Enter the last name");

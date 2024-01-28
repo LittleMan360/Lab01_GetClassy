@@ -5,8 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonTest
 {
+    //creates 6 people
     private Person p1, p2, p3, p4, p5, p6;
 
+    //sets up the test
     @BeforeEach
     void setUp()
     {
@@ -18,7 +20,7 @@ public class PersonTest
         p6 = new Person("000006", "Dalton", "Tester6", "Sr.", 2000);
     }
 
-
+    //test to see if the id is not equal to the id of the person
     @Test
     void setID()
     {
@@ -26,6 +28,7 @@ public class PersonTest
         assertEquals("000001", p1.getID());
     }
 
+    //test to see if the first name is not equal to the first name of the person
     @Test
     void setFirstName()
     {
@@ -33,6 +36,7 @@ public class PersonTest
         assertEquals("John", p1.getFirstName());
     }
 
+    //test to see if the last name is not equal to the last name of the person
     @Test
     void setLastName()
     {
@@ -40,6 +44,7 @@ public class PersonTest
         assertEquals("Tester1", p1.getLastName());
     }
 
+    //test to see if the title is not equal to the title of the person
     @Test
     void setTitle()
     {
@@ -47,13 +52,11 @@ public class PersonTest
         assertEquals("Mr.", p2.getTitle());
     }
 
+    //test to see if the year of birth is not equal to the year of birth of the person
     @Test
     void setYOB()
     {
         p3.setYOB(1996);
         assertEquals(1996, p3.getYOB());
     }
-
-
-
 }

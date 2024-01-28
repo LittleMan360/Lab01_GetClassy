@@ -1,12 +1,14 @@
 import java.util.Calendar;
 
 public class Person {
+    //creates the variables
     private String ID;
     private String firstName;
     private String lastName;
     private String title;
     private int YOB;
 
+    //creates the person
     public Person(String ID, String firstName, String lastName, String title, int YOB)
     {
         this.ID = ID;
@@ -72,7 +74,6 @@ public class Person {
     //lets user set year of birth
     public void setYOB(int YOB)
     {
-
         this.YOB = YOB;
     }
 
