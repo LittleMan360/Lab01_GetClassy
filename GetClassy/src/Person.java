@@ -99,8 +99,20 @@ public class Person {
 
 
     //returns the file to csv file
-    public String toCSVRecordMethod()
-    {
-        return  this.ID + ", " + this.firstName + "," + this.lastName + "," + YOB;
+    public String toCSVDataRecord(){
+        return firstName + ", " + lastName + ", " + ID + ", " + title + ", " + YOB;
     }
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", ID='" + ID + '\'' +
+                ", title='" + title + '\'' +
+                ", YOB=" + YOB +
+                '}';
+    }
+
 }

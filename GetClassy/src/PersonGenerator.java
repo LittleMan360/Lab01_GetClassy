@@ -43,8 +43,8 @@ public class PersonGenerator
             title = SafeInput.getNonZeroLenString(in,"Enter the title");
             YOB = SafeInput.getRangedInt(in,"Enter the YOB: ", 1000, 9999);
 
-            Person personInput = new Person(firstName,lastName,ID,title,YOB);
-            personList.add(personInput);
+            Person person = new Person(firstName,lastName,ID,title,YOB);
+            personList.add(person);
 
             done = SafeInput.getYNConfirm(in, "Are you done?" );
         }while(!done);
@@ -62,9 +62,9 @@ public class PersonGenerator
 
             // Finally can write the file LOL!
 
-            for(Person rec : personList)
+            for(Person person : personList)
             {
-                writer.write(rec.toCSVRecordMethod(), 0, rec.toCSVRecordMethod().length());  // stupid syntax for write rec
+                writer.write(person.toCSVDataRecord());  // stupid syntax for write rec
                 // 0 is where to start (1st char) to write
                 // rec. length() is how many chars to write (all)
                 writer.newLine();  // adds the new line

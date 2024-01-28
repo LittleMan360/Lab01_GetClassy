@@ -59,4 +59,13 @@ public class PersonTest
         p3.setYOB(1996);
         assertEquals(1996, p3.getYOB());
     }
+
+    @Test
+    void testFormalName() {
+        p1.setFirstName("Hank");
+        p1.setLastName("Hill");
+        p1.getFullName();
+        p1.setTitle("Mr.");
+        assertEquals("Mr. Hank Hill", p1.formalName());
+    }
 }
